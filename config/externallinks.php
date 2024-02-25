@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'verify_document_url' => env('APP_ENV') == 'local' ? env('VERIFY_DOCUMENT_URL') : env('VERIFY_DOCUMENT_URL'),
+    'verify_session_url' => env('APP_ENV') == 'local' ? env('VERIFY_SESSION_URL') : env('VERIFY_SESSION_URL'),
+    'video_session_url' => env('APP_ENV') == 'local' ? env('VIDEO_SESSION_URL') : env('VIDEO_SESSION_URL'),
+    'notary_session_url' => env('APP_ENV') == 'local' ? env('NOTARY_SESSION_URL') : env('NOTARY_SESSION_URL'),
+    'admin_login_url' => env('APP_ENV') == 'local' ? env('ADMIN_LOGIN_URL') : env('ADMIN_LOGIN_URL'),
+    'team_invite_url' => env('APP_ENV') == 'local' ? env('TEAM_INVITE_URL') : env('TEAM_INVITE_URL'),
+    'forgot_password_url' => env('APP_ENV') == 'local' ? env('FORGOT_PASSWORD_URL') : env('FORGOT_PASSWORD_URL'),
+    'user_forgot_password_url' => env('APP_ENV') == 'local' ? env('USER_FORGOT_PASSWORD_URL') : env('USER_FORGOT_PASSWORD_URL'),
+    'notary_forgot_password_url' => env('APP_ENV') == 'local' ? env('NOTARY_FORGOT_PASSWORD_URL') : env('NOTARY_FORGOT_PASSWORD_URL'),
+    'document_view_url' => env('APP_ENV') == 'local' ? env('DOCUMENT_VIEW_URL') : env('DOCUMENT_VIEW_URL'),
+    'user_email_verify_url' => env('APP_ENV') == 'local' ? env('USER_EMAIL_VERIFY_URL') : env('USER_EMAIL_VERIFY_URL'),
+    'notary_email_verify_url' => env('APP_ENV') == 'local' ? env('NOTARY_EMAIL_VERIFY_URL') : env('NOTARY_EMAIL_VERIFY_URL'),
+    'frontend_user_url' => env('APP_ENV') == 'local' ? env('FRONTEND_USER_URL') : env('FRONTEND_USER_URL'),
+    'test' => env('THIRD_PARTY_API_MODE') == 'test' ? 'Testing' : '',
+    's3_storage_url' => env('THIRD_PARTY_API_MODE') == 'local' ? env('S3_STORAGE_URL') : env('S3_STORAGE_URL'),
+    'signlink_url' => env('SIGNLINK_URL') == 'local' ? env('SIGNLINK_URL') : env('SIGNLINK_URL'),
+    'signlink_public_url' => env('SIGNLINK_PUBLIC_URL') == 'local' ? env('SIGNLINK_PUBLIC_URL') : env('SIGNLINK_PUBLIC_URL'),
+    'tonote_policy_public_url' => env('TONOTE_POLICY_PUBLIC_URL') == 'local' ? env('TONOTE_POLICY_PUBLIC_URL') : env('TONOTE_POLICY_PUBLIC_URL'),
+    'calendly_url' => env('TONOTE_CALENDLY_URL') == 'local' ? env('TONOTE_CALENDLY_URL') : env('TONOTE_CALENDLY_URL'),
+    'cfo_session_url' => env('APP_ENV') == 'local' ? env('CFO_SESSION_URL') : env('CFO_SESSION_URL'),
+    'cfo_email_verify_url' => env('APP_ENV') == 'local' ? env('CFO_EMAIL_VERIFY_URL') : env('CFO_EMAIL_VERIFY_URL'),
+    'cfo_forgot_password_url' => env('APP_ENV') == 'local' ? env('CFO_FORGOT_PASSWORD_URL') : env('CFO_FORGOT_PASSWORD_URL'),
+];
