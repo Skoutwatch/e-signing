@@ -22,6 +22,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('subscriptions:send-expiry-emails')->dailyAt('12:00');
         $schedule->command('documents:send-reminders')->dailyAt('12:00');
         $schedule->command('document:check-participants')->everyMinute();
+        $schedule->command('check:first-transaction-monthly')->monthly();
 
         Log::info('running cron');
 

@@ -41,7 +41,7 @@ class DocumentExportService
                 $width = ($tool->tool_width);
                 $height = ($tool->tool_height);
                 $setTool .= '
-                    <div style="position: absolute; top: '.$y.'px; left: '.$x.'px; z-index: 1; width: '.$width.'px; height: '.$height.'px; color:black; font-weight:500; font-family:Poppins, sans-serif !important; padding: 50px 0 !important">
+                    <div style="position: absolute; top: '.$y.'px; left: '.$x.'px; z-index: 1; width: '.$width.'px; height: '.$height.'px; color:black; font-weight:500; font-family:Poppins, sans-serif !important; ">
                         '.$tool->value.'
                     </div>';
             }
@@ -54,7 +54,7 @@ class DocumentExportService
                 $height = ($tool->tool_height);
                 $setTool .= '
                     <div style="position: absolute; top: '.$y.'px; left: '.$x.'px; z-index: 1; width: '.$width.'px; height: '.$height.'px;">
-                        <img src="'.$fileTool.'" style="width: 100%; padding-bottom: 10px !important">
+                        <img src="'.$fileTool.'" style="width: 100%">
                     </div>';
             }
         }

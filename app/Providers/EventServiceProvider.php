@@ -139,6 +139,10 @@ class EventServiceProvider extends ServiceProvider
             \App\Listeners\PaymentFailedListener::class,
         ],
 
+        \App\Events\Partner\UserFirstTransactionEvent::class => [
+            \App\Listeners\Partner\UserFirstTransactionListener::class,
+        ],
+
     ];
 
     /**

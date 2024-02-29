@@ -27,6 +27,12 @@ Route::get('/payments', function () {
     return 'ok';
 });
 
+Route::get('/partner-transactions', function () {
+    Artisan::call('check:first-transaction-monthly');
+
+    return 'ok';
+});
+
 /*Route::prefix('demo')
     ->group(function () {
         Route::get('sub', [\App\Http\Controllers\DemoController::class, 'subs']);

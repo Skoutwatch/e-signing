@@ -2119,82 +2119,6 @@
                 ]
             }
         },
-        "/api/v1/document-export/{id}": {
-            "get": {
-                "tags": [
-                    "Document"
-                ],
-                "summary": "Show DocumentExport",
-                "description": "Show DocumentExport",
-                "operationId": "showDocumentExport",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Document Export ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful signin",
-                        "content": {
-                            "application/json": {}
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request"
-                    },
-                    "401": {
-                        "description": "unauthenticated"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                }
-            }
-        },
-        "/api/v1/document-export-test/{id}": {
-            "get": {
-                "tags": [
-                    "Document"
-                ],
-                "summary": "Show DocumentExportTest",
-                "description": "Show DocumentExportTest",
-                "operationId": "showDocumentExportTest",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Document Export ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful signin",
-                        "content": {
-                            "application/json": {}
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request"
-                    },
-                    "401": {
-                        "description": "unauthenticated"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                }
-            }
-        },
         "/api/v1/declined-documents": {
             "get": {
                 "tags": [
@@ -3038,6 +2962,49 @@
                         "name": "id",
                         "in": "path",
                         "description": "DocumentLocker ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful signin",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/document-nft-metadata/{id}": {
+            "get": {
+                "tags": [
+                    "NFT Service"
+                ],
+                "summary": "Show updateDocumentNFTMetadata",
+                "description": "Show updateDocumentNFTMetadata",
+                "operationId": "updateDocumentNFTMetadata",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Document ID",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4383,6 +4350,82 @@
                         "name": "email",
                         "in": "path",
                         "description": "User Email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful signin",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/v1/document-export/{id}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "Show DocumentExport",
+                "description": "Show DocumentExport",
+                "operationId": "showDocumentExport",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Document Export ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful signin",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/v1/document-export-test/{id}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "Show DocumentExportTest",
+                "description": "Show DocumentExportTest",
+                "operationId": "showDocumentExportTest",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Document Export ID",
                         "required": true,
                         "schema": {
                             "type": "string"

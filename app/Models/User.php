@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TransactionStatus;
 use App\Http\Resources\User\UserCollection;
 use App\Http\Resources\User\UserResource;
 use App\Models\Location\City;
@@ -232,6 +233,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Transaction::class);
     }
 
+    public function paidTransactions()
+    {
+        return $this->hasMany(Transaction::class)->where('status', TransactionStatus::Paid);
+    }
+
     public function bankDetail()
     {
         return $this->hasOne(BankDetail::class);
@@ -318,5 +324,10 @@ class User extends Authenticatable implements JWTSubject
     public function signedtools()
     {
         return $this->hasOne(DocumentResourceTool::class)->where('signed', true);
+    }
+
+    public function referralCodes()
+    {
+        return $this->hasMany(User::class, 'referral_code');
     }
 }

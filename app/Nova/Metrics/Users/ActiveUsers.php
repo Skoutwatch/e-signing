@@ -2,10 +2,10 @@
 
 namespace App\Nova\Metrics\Users;
 
-use Carbon\Carbon;
 use App\Models\User;
-use Laravel\Nova\Metrics\Trend;
+use Carbon\Carbon;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Metrics\Trend;
 
 class ActiveUsers extends Trend
 {
@@ -16,7 +16,7 @@ class ActiveUsers extends Trend
      */
     public function calculate(NovaRequest $request)
     {
-            $range = $request->range;
+        $range = $request->range;
 
         switch ($range) {
             case 7:
@@ -25,6 +25,7 @@ class ActiveUsers extends Trend
                 return $this->countByDays($request, User::class, 'last_login_activity', 'day', 30);
             case 90:
                 $startDate = Carbon::now()->subDays(90)->startOfDay();
+
                 return $this->countByDays($request, User::class, 'last_login_activity', 'day', $startDate);
             case 365:
                 return $this->countByDays($request, User::class, 'last_login_activity', 'day', 365);

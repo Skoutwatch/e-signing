@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers\Api\V1\Document;
 
+use ErrorException;
+use App\Models\Document;
+use App\Enums\EntryPoint;
+use App\Enums\DocumentStatus;
+use App\Traits\Plugins\Underdog;
+use App\Http\Controllers\Controller;
 use App\Enums\DocumentParticipantRole;
 use App\Enums\DocumentParticipantStatus;
-use App\Enums\DocumentStatus;
-use App\Enums\EntryPoint;
-use App\Events\Document\DocumentCompletedEvent;
-use App\Events\Document\DocumentOwnerActionMailEvent;
-use App\Events\Document\DocumentOwnerParticipantActionEvent;
-use App\Events\Document\DocumentParticipantActionEvent;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Document\StoreDocumentParticipantDoneFormRequest;
-use App\Models\Document;
-use App\Services\Document\DocumentAuditTrailService;
-use App\Services\Document\DocumentSequenceOrderService;
 use App\Services\Document\DocumentService;
+use App\Events\Document\DocumentCompletedEvent;
+use App\Services\Document\DocumentAuditTrailService;
+use App\Events\Document\DocumentOwnerActionMailEvent;
+use App\Events\Document\DocumentParticipantActionEvent;
+use App\Services\Document\DocumentSequenceOrderService;
+use App\Events\Document\DocumentOwnerParticipantActionEvent;
 use App\Services\Subscription\SubscriptionRestrictionService;
-use ErrorException;
+use App\Http\Requests\Document\StoreDocumentParticipantDoneFormRequest;
 
 class DocumentParticipantDoneController extends Controller
 {

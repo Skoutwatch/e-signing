@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Api\V1\Transaction;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Transaction\StoreTransactionFormRequest;
-use App\Http\Requests\Transaction\UpdateTransactionFormRequest;
-use App\Models\ScheduleSession;
 use App\Models\Transaction;
+use Illuminate\Support\Arr;
+use App\Models\ScheduleSession;
+use App\Http\Controllers\Controller;
+use App\Services\Transaction\TransactionService;
 use App\Services\Payment\PaymentProcessingService;
 use App\Services\Payment\PaymentVerificationService;
 use App\Services\ScheduleSession\ScheduleSessionExtraSeal;
-use Illuminate\Support\Arr;
+use App\Http\Requests\Transaction\StoreTransactionFormRequest;
+use App\Http\Requests\Transaction\UpdateTransactionFormRequest;
 
 class TransactionController extends Controller
 {
@@ -265,6 +266,8 @@ class TransactionController extends Controller
         $transaction->update(Arr::except($data, ['authorization']));
 
         (new PaymentProcessingService())->processAfterSuccess($transaction);
+
+        (new TransactionService())->firstTransaction($transaction, auth('api')->user());
 
         return $this->showMessage('Transaction processed successfully');
     }

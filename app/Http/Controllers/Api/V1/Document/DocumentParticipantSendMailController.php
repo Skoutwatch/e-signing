@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Api\V1\Document;
 
-use App\Enums\DocumentStatus;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Document\DocumentParticipantSendMailFormRequest;
 use App\Models\Document;
+use App\Enums\DocumentStatus;
+use App\Services\User\UserService;
 use App\Models\DocumentParticipant;
+use App\Http\Controllers\Controller;
+use App\Services\Document\DocumentService;
+use App\Services\Mixpanel\MixpanelService;
 use App\Services\Document\DocumentConversionService;
 use App\Services\Document\DocumentParticipantService;
 use App\Services\Document\DocumentSequenceOrderService;
-use App\Services\Document\DocumentService;
-use App\Services\Mixpanel\MixpanelService;
 use App\Services\Subscription\SubscriptionRestrictionService;
-use App\Services\User\UserService;
+use App\Http\Requests\Document\DocumentParticipantSendMailFormRequest;
 
 class DocumentParticipantSendMailController extends Controller
 {
