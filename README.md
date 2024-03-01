@@ -63,7 +63,7 @@ Start the Laravel development server:
 ```
 php artisan serve
 ```
-Your Laravel application should now be accessible at http://localhost:8000.
+Your Laravel application should now be accessible at http://localhost:8000/api/docs.
 
 Additional Dependencies
 For any additional dependencies specific to your project (e.g., Redis, MySQL), you can generally find them on Homebrew:
