@@ -54,7 +54,7 @@ Ensure your .env file is configured with your database connection details. Then,
 
 bash
 ```
-php artisan migrate
+php artisan migrate:fresh --seed
 ```
 
 Step 5: Running the Project
