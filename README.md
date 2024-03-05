@@ -7,8 +7,8 @@ This guide provides a streamlined approach to setting up the Laravel project on 
 
 https://doc-editable.netlify.app/
 
-email: user@tonote.com
-password: password
+### email: user@tonote.com
+### password: password
 
 
 ## Prerequisites
